@@ -31,7 +31,7 @@ async function userSigninController(req,res){
         const token =  jwt.sign(tokenData, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
-            httpOnly : true,
+            httpOnly : false,
             secure : true
         }
 
