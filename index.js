@@ -20,6 +20,10 @@ app.use(cookieParser());
 
 app.use('/api', router);
 
+app.get("/", (req, res)=>{
+    res.json("Welcome to my website")
+})
+
 
 
 
