@@ -19,7 +19,7 @@ async function userSigninController(req,res){
             throw new Error("User not found")
        }
 
-       const checkPassword = await bcrypt.compare(password,user.password)
+       const checkPassword =  bcrypt.compare(password,user.password)
 
        console.log("checkPassoword",checkPassword)
 
@@ -28,7 +28,7 @@ async function userSigninController(req,res){
             _id : user._id,
             email : user.email,
         }
-        const token = await jwt.sign(tokenData, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
+        const token =  jwt.sign(tokenData, process.env.JWT_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
             httpOnly : true,
