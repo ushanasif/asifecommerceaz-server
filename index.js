@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 
 const app = express()
 app.use(cors({
-    origin: ["https://asifecommerceaz-client.vercel.app", "http://localhost:3000"],
+    origin: ["https://asifecommerceaz-client.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true
 }))
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use('/api', router);
 
 app.get("/", (req, res)=>{
-    res.json("Welcome to my website hello")
+    res.json("Welcome to my website")
 })
 
 
